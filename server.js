@@ -11,14 +11,15 @@ const morgan = require('morgan');
 
 
 
-console.log(process.env.POSTGRES_URI)
-/*console.log(process.env.POSTGRES_USER)
+/*console.log(process.env.POSTGRES_URI)
+console.log(process.env.POSTGRES_USER)
 console.log(process.env.POSTGRES_PASSWORD)
 console.log(process.env.POSTGRES_DB)
 console.log(process.env.POSTGRES_HOST)*/
 const postgres = knex({
   client: 'pg',
-  connection: process.env.POSTGRES_URI
+  connectionString: process.env.POSTGRES_DB,
+  ssl: true,
     /*host: process.env.POSTGRES_HOST,
     user: process.env.POSTGRES_USER,//'postgres',
     password: process.env.POSTGRES_PASSWORD,//'adarshserver1',

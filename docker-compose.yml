@@ -10,11 +10,11 @@ services:
     command: npm start
     working_dir: /usr/src/amemegeneratorapi
     environment:
-     POSTGRES_URI: postgres://postgres:adarshserver1@postgres:5432/template0
+     #POSTGRES_URI: postgres://postgres:adarshserver1@postgres:5432/template0
      # POSTGRES_USER: postgres
      # POSTGRES_PASSWORD: adarshserver1
      # POSTGRES_DB: amemegeneratorapi-docker
-     # POSTGRES_HOST: postgres
+      POSTGRES_DB: process.env.DATABASE_URL
     ports:
       - "5505:5505"
     volumes:
@@ -24,10 +24,10 @@ services:
   postgres:
     #container_name: postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: adarshserver1
-      POSTGRES_DB: template0
-      POSTGRES_HOST: postgres
+      #POSTGRES_USER: postgres
+      #POSTGRES_PASSWORD: adarshserver1
+      POSTGRES_DB: process.env.DATABASE_URL
+      #POSTGRES_HOST: postgres
     build: ./postgres
     ports:
       - "5432:5432"
