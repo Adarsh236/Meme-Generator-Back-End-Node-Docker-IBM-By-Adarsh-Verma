@@ -7,15 +7,23 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
+const morgan = require('morgan');
 
+
+
+console.log(process.env.POSTGRES_URI)
+/*console.log(process.env.POSTGRES_USER)
+console.log(process.env.POSTGRES_PASSWORD)
+console.log(process.env.POSTGRES_DB)
+console.log(process.env.POSTGRES_HOST)*/
 const postgres = knex({
   client: 'pg',
-  connection: {
-    host: '127.0.0.1',
-    user: 'postgres',
-    password: 'adarshserver1',
-    database: 'amemeusers'
-  }
+  connection: process.env.POSTGRES_URI
+    /*host: process.env.POSTGRES_HOST,
+    user: process.env.POSTGRES_USER,//'postgres',
+    password: process.env.POSTGRES_PASSWORD,//'adarshserver1',
+    database: process.env.POSTGRES_DB//'amemeusers'*/
+  
 });
 
 /*console.log(postgres.select('*').from('users').then(data => {
@@ -27,11 +35,12 @@ const postgres = knex({
 });*/
 
 const app = express();
-
+console.log('I love yooooooooooou?')
+app.use(morgan('combined'))
 app.use(cors())
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => { res.send(database.users) })
+app.get('/', (req, res) => { res.send("ha ha ha") })
 
 
 ///////////////////////////////////////////////////////////////////////1
@@ -72,9 +81,6 @@ joined: new Date()
 res.json(user[0]);}).catch(err=> res.status(400).json('unable to join'))  })
 */
 
-
-
-
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, postgres) })
 /*app.get('/profile/:id', (req, res) =>{
   const {id}= req.params;
@@ -100,13 +106,6 @@ app.put('/image', (req, res) => { image.handleImage(req, res, postgres) })
   }).catch(err => res.status(400).json('unable to get entiries'))
 })*/
 //////////////////////////////////////////////////////////////////1
-
-
-
-
-
-
-
 
 app.listen(5505, () => {
   console.log('apppppppppppppppp  listeninh8')

@@ -1,0 +1,33 @@
+version: '3.6'
+
+services:
+
+  # Backend API
+  amemegeneratorapi:
+    container_name: backend
+    # image: node:8.11.1
+    build: ./
+    command: npm start
+    working_dir: /usr/src/amemegeneratorapi
+    environment:
+     POSTGRES_URI: postgres://postgres:adarshserver1@postgres:5432/template0
+     # POSTGRES_USER: postgres
+     # POSTGRES_PASSWORD: adarshserver1
+     # POSTGRES_DB: amemegeneratorapi-docker
+     # POSTGRES_HOST: postgres
+    ports:
+      - "5505:5505"
+    volumes:
+      - ./:/usr/src/amemegeneratorapi
+
+  # Postgres
+  postgres:
+    #container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: adarshserver1
+      POSTGRES_DB: template0
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
