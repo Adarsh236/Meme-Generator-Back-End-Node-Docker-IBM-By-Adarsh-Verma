@@ -13,10 +13,10 @@ services:
      #POSTGRES_URI: postgres://postgres:adarshserver1@postgres:5432/template0
      # POSTGRES_USER: postgres
      # POSTGRES_PASSWORD: adarshserver1
-     # POSTGRES_DB: amemegeneratorapi-docker
       POSTGRES_DB: process.env.DATABASE_URL
+      POSTGRES_HOST: ssl
     ports:
-      - "5505:5505"
+      - "process.env.PORT:process.env.PORT"
     volumes:
       - ./:/usr/src/amemegeneratorapi
 
@@ -27,7 +27,7 @@ services:
       #POSTGRES_USER: postgres
       #POSTGRES_PASSWORD: adarshserver1
       POSTGRES_DB: process.env.DATABASE_URL
-      #POSTGRES_HOST: postgres
+      POSTGRES_HOST: ssl
     build: ./postgres
     ports:
-      - "5432:5432"
+      - "process.env.PORT:process.env.PORT"

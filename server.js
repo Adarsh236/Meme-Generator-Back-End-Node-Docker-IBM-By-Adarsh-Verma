@@ -19,7 +19,7 @@ console.log(process.env.POSTGRES_HOST)*/
 const postgres = knex({
   client: 'pg',
   connectionString: process.env.POSTGRES_DB,
-  ssl: true,
+  ssl: process.env.POSTGRES_HOST,
     /*host: process.env.POSTGRES_HOST,
     user: process.env.POSTGRES_USER,//'postgres',
     password: process.env.POSTGRES_PASSWORD,//'adarshserver1',
