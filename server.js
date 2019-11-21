@@ -109,5 +109,5 @@ app.put('/image', (req, res) => { image.handleImage(req, res, postgres) })
 //////////////////////////////////////////////////////////////////1
 
 app.listen(process.env.PORT || 5505, () => {
-  console.log('apppppppppppppppp  listeninh9 ${process.env.PORT}')
+  console.log('apppppppppppppppp  listeninh9${process.env.PORT}')
 })

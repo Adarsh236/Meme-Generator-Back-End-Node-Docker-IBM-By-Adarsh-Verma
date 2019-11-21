@@ -14,7 +14,7 @@ services:
      # POSTGRES_USER: postgres
      # POSTGRES_PASSWORD: adarshserver1
       POSTGRES_DB: process.env.DATABASE_URL
-      POSTGRES_HOST: ssl
+      POSTGRES_HOST: true
     ports:
       - "process.env.PORT:process.env.PORT"
     volumes:
