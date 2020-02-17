@@ -1,14 +1,14 @@
 {
-  "name": "amemegeneratorapi",
-  "version": "1.0.0",
-  "description": "",
+  "name": "meme-generator-back-end-node-docker-ibm-by-adarsh-verma",
+  "version": "2.0.0",
+  "description": "update",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adarsh Verma",
   "license": "ISC",
   "devDependencies": {
     "mssql": "^5.1.0",
@@ -25,5 +25,13 @@
     "knex": "^0.20.2",
     "morgan": "^1.9.1",
     "pg": "^7.12.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adarsh236/Meme-Generator-Back-End-Node-Docker-IBM-By-Adarsh-Verma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Adarsh236/Meme-Generator-Back-End-Node-Docker-IBM-By-Adarsh-Verma/issues"
+  },
+  "homepage": "https://github.com/Adarsh236/Meme-Generator-Back-End-Node-Docker-IBM-By-Adarsh-Verma#readme"
 }
